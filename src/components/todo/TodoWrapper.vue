@@ -17,6 +17,12 @@ const addTodo = (title) => {
   todos.value.push(newTodo)
 }
 
+const removeTodo = (tno) => {
+
+  todos.value = todos.value.filter(todo => todo.tno !== tno)
+
+}
+
 
 
 
@@ -25,7 +31,7 @@ const addTodo = (title) => {
 
 <template>
   <TodoInput @add=addTodo></TodoInput>
-  <TodoList :arr="todos"></TodoList>
+  <TodoList :arr="todos" @remove=removeTodo></TodoList>
 
 </template>
 
